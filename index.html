@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=320, initial-scale=1">
+  <title>Piedra, Papel o Tijera</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🖐 Piedra, Papel o Tijera ✌️</h1>
+  <div class="main-container">
+    <div class="left-panel">
+      <div class="video-container">
+        <video id="webcam" autoplay playsinline width="320" height="240"></video>
+        <canvas id="snapshot" width="320" height="240" style="display:none;"></canvas>
+        <div id="countdown"></div>
+        <img id="confetti" src="confetti.gif" style="display:none;">
+      </div>
+      <div class="history-container">
+        <h3>Historial</h3>
+        <ol id="history-list"></ol>
+      </div>
+    </div>
+    <div class="stats-box">
+      <div class="controls-row">
+        <button id="mode-btn">Modo 2 Jugadores</button>
+        <label for="round-select">Rondas:
+          <select id="round-select">
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+          </select>
+        </label>
+      </div>
+      <div class="score-row">
+        <span>Jugador 1: <b id="score-user">0</b></span>
+        <span id="score-bot-label">Jugador 2: <b id="score-bot">0</b></span>
+        <span>Empates: <b id="score-draws">0</b></span>
+      </div>
+      <p>Ronda: <b id="round-counter">1 / 3</b></p>
+      <div class="hands-row">
+        <div>
+          <div id="user-hand-anim"></div>
+          <p>J1: <strong id="user-move">...</strong></p>
+          <img id="user-photo" width="70" style="display:none;">
+        </div>
+        <div>
+          <div id="bot-hand-anim"></div>
+          <p>J2: <strong id="bot-move">...</strong></p>
+          <img id="bot-img" width="70" style="display:none;">
+        </div>
+      </div>
+      <p>Resultado: <strong id="result">¡Haz tu jugada!</strong></p>
+      <button id="capture-btn">Capturar</button>
+    </div>
+  </div>
+  <audio id="audio-click" src="sounds/click.mp3" preload="auto"></audio>
+  <audio id="audio-win" src="sounds/win.mp3" preload="auto"></audio>
+  <audio id="audio-lose" src="sounds/lose.mp3" preload="auto"></audio>
+  <audio id="audio-draw" src="sounds/draw.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
